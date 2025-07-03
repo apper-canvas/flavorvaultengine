@@ -2,7 +2,6 @@ class ReviewService {
   constructor() {
     this.tableName = 'review';
   }
-  
   async getAll() {
     try {
       const { ApperClient } = window.ApperSDK;
@@ -287,5 +286,6 @@ class ReviewService {
     }
   }
 }
+}
 
-export const reviewService = new ReviewService();
+export default new ReviewService();
