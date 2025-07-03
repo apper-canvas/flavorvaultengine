@@ -1,0 +1,58 @@
+[
+  {
+    "Id": 1,
+    "recipeId": 1,
+    "rating": 5,
+    "comment": "This quinoa bowl is absolutely delicious! The flavors are so fresh and vibrant. Perfect for a healthy lunch.",
+    "createdAt": "2024-01-16T12:00:00Z"
+  },
+  {
+    "Id": 2,
+    "recipeId": 1,
+    "rating": 4,
+    "comment": "Great recipe! I added some chickpeas for extra protein and it was amazing.",
+    "createdAt": "2024-01-18T15:30:00Z"
+  },
+  {
+    "Id": 3,
+    "recipeId": 2,
+    "rating": 5,
+    "comment": "These cookies are perfect! Soft and chewy just like my grandma used to make.",
+    "createdAt": "2024-01-22T10:45:00Z"
+  },
+  {
+    "Id": 4,
+    "recipeId": 2,
+    "rating": 5,
+    "comment": "My kids absolutely love these cookies. The recipe is easy to follow and the results are consistent.",
+    "createdAt": "2024-01-25T16:20:00Z"
+  },
+  {
+    "Id": 5,
+    "recipeId": 3,
+    "rating": 4,
+    "comment": "The avocado toast was delicious! Poaching the eggs took some practice but worth it.",
+    "createdAt": "2024-01-26T09:15:00Z"
+  },
+  {
+    "Id": 6,
+    "recipeId": 4,
+    "rating": 5,
+    "comment": "Authentic Thai flavors! This curry is restaurant quality. Will definitely make again.",
+    "createdAt": "2024-02-03T19:00:00Z"
+  },
+  {
+    "Id": 7,
+    "recipeId": 5,
+    "rating": 4,
+    "comment": "The pizza dough recipe is excellent. The crust came out crispy and chewy.",
+    "createdAt": "2024-02-07T18:30:00Z"
+  },
+  {
+    "Id": 8,
+    "recipeId": 6,
+    "rating": 4,
+    "comment": "Fluffy pancakes with perfect blueberry distribution. Great weekend breakfast!",
+    "createdAt": "2024-02-12T08:45:00Z"
+  }
+]

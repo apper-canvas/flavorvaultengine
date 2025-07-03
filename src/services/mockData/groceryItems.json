@@ -1,0 +1,66 @@
+[
+  {
+    "Id": 1,
+    "ingredient": "quinoa",
+    "quantity": 1,
+    "unit": "cup",
+    "recipeIds": [1],
+    "checked": false
+  },
+  {
+    "Id": 2,
+    "ingredient": "cucumber",
+    "quantity": 1,
+    "unit": "piece",
+    "recipeIds": [1],
+    "checked": false
+  },
+  {
+    "Id": 3,
+    "ingredient": "cherry tomatoes",
+    "quantity": 1,
+    "unit": "cup",
+    "recipeIds": [1],
+    "checked": true
+  },
+  {
+    "Id": 4,
+    "ingredient": "eggs",
+    "quantity": 2,
+    "unit": "piece",
+    "recipeIds": [3],
+    "checked": false
+  },
+  {
+    "Id": 5,
+    "ingredient": "avocado",
+    "quantity": 1,
+    "unit": "piece",
+    "recipeIds": [3],
+    "checked": false
+  },
+  {
+    "Id": 6,
+    "ingredient": "bread",
+    "quantity": 2,
+    "unit": "slice",
+    "recipeIds": [3],
+    "checked": true
+  },
+  {
+    "Id": 7,
+    "ingredient": "fresh blueberries",
+    "quantity": 1,
+    "unit": "cup",
+    "recipeIds": [6],
+    "checked": false
+  },
+  {
+    "Id": 8,
+    "ingredient": "all-purpose flour",
+    "quantity": 1.5,
+    "unit": "cup",
+    "recipeIds": [6],
+    "checked": false
+  }
+]
