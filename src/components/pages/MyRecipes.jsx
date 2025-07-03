@@ -133,9 +133,10 @@ return (
               Recipe folder organization interface coming soon...
             </div>
           </div>
-        )}
+)}
       </div>
     </motion.div>
   );
+};
 
 export default MyRecipes;
