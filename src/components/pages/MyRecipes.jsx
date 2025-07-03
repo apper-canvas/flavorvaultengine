@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
-import Empty from "@/components/ui/Empty";
-import Error from "@/components/ui/Error";
-import Loading from "@/components/ui/Loading";
 import SearchBar from "@/components/molecules/SearchBar";
-import { savedRecipeService } from "@/services/api/savedRecipeService";
+import Error from "@/components/ui/Error";
+import Empty from "@/components/ui/Empty";
+import Loading from "@/components/ui/Loading";
 import { recipeService } from "@/services/api/recipeService";
+import { savedRecipeService } from "@/services/api/savedRecipeService";
 
 const MyRecipes = () => {
   const [savedRecipes, setSavedRecipes] = useState([]);
@@ -68,18 +68,17 @@ const MyRecipes = () => {
   if (loading) return <Loading type="list" />;
   if (error) return <Error message={error} onRetry={loadSavedRecipes} />;
   
-  return (
+return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       className="space-y-6"
     >
       {/* Header */}
-{/* Header */}
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-display font-bold text-gray-900">
-            My Recipe Collection
+            My Recipes
           </h1>
           <p className="text-gray-600 mt-2">
             {recipes.length} saved recipes
@@ -95,7 +94,7 @@ const MyRecipes = () => {
             </Button>
           </Link>
         </div>
-</div>
+      </div>
       
       {/* Search */}
       {recipes.length > 0 && (
