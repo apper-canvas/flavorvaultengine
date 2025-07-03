@@ -1,0 +1,50 @@
+[
+  {
+    "Id": 1,
+    "recipeId": 1,
+    "date": "2024-01-15",
+    "timeSlot": "breakfast",
+    "notes": "Perfect for Monday morning",
+    "createdAt": "2024-01-10T10:00:00Z"
+  },
+  {
+    "Id": 2,
+    "recipeId": 3,
+    "date": "2024-01-15",
+    "timeSlot": "lunch",
+    "notes": "Light and healthy lunch option",
+    "createdAt": "2024-01-10T11:00:00Z"
+  },
+  {
+    "Id": 3,
+    "recipeId": 5,
+    "date": "2024-01-15",
+    "timeSlot": "dinner",
+    "notes": "Family dinner",
+    "createdAt": "2024-01-10T12:00:00Z"
+  },
+  {
+    "Id": 4,
+    "recipeId": 2,
+    "date": "2024-01-16",
+    "timeSlot": "breakfast",
+    "notes": "Quick Tuesday breakfast",
+    "createdAt": "2024-01-10T13:00:00Z"
+  },
+  {
+    "Id": 5,
+    "recipeId": 4,
+    "date": "2024-01-16",
+    "timeSlot": "dinner",
+    "notes": "Comfort food for Tuesday evening",
+    "createdAt": "2024-01-10T14:00:00Z"
+  },
+  {
+    "Id": 6,
+    "recipeId": 6,
+    "date": "2024-01-17",
+    "timeSlot": "lunch",
+    "notes": "Wednesday lunch special",
+    "createdAt": "2024-01-10T15:00:00Z"
+  }
+]

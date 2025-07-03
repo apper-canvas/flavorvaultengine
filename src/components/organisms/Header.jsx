@@ -8,9 +8,10 @@ const Header = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
-  const navItems = [
+const navItems = [
     { name: 'Browse Recipes', path: '/browse', icon: 'Search' },
     { name: 'My Recipes', path: '/my-recipes', icon: 'BookOpen' },
+    { name: 'Meal Calendar', path: '/meal-calendar', icon: 'Calendar' },
     { name: 'Grocery List', path: '/grocery-list', icon: 'ShoppingCart' },
     { name: 'Create Recipe', path: '/create-recipe', icon: 'Plus' },
   ];

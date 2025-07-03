@@ -4,6 +4,7 @@ import Layout from '@/components/organisms/Layout';
 import BrowseRecipes from '@/components/pages/BrowseRecipes';
 import RecipeDetail from '@/components/pages/RecipeDetail';
 import MyRecipes from '@/components/pages/MyRecipes';
+import MealCalendar from '@/components/pages/MealCalendar';
 import GroceryList from '@/components/pages/GroceryList';
 import CreateRecipe from '@/components/pages/CreateRecipe';
 
@@ -15,7 +16,8 @@ function App() {
           <Route path="/" element={<BrowseRecipes />} />
           <Route path="/browse" element={<BrowseRecipes />} />
           <Route path="/recipe/:id" element={<RecipeDetail />} />
-          <Route path="/my-recipes" element={<MyRecipes />} />
+<Route path="/my-recipes" element={<MyRecipes />} />
+          <Route path="/meal-calendar" element={<MealCalendar />} />
           <Route path="/grocery-list" element={<GroceryList />} />
           <Route path="/create-recipe" element={<CreateRecipe />} />
         </Routes>
