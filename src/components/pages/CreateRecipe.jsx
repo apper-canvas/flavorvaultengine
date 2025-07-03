@@ -113,7 +113,7 @@ const CreateRecipe = () => {
     try {
       setLoading(true);
       
-      const newRecipe = {
+const newRecipe = {
         ...recipe,
         rating: 0,
         reviewCount: 0,

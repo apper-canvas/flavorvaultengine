@@ -1,21 +1,22 @@
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { toast } from 'react-toastify';
-import ApperIcon from '@/components/ApperIcon';
-import Button from '@/components/atoms/Button';
-import Badge from '@/components/atoms/Badge';
-import Rating from '@/components/atoms/Rating';
-import IngredientList from '@/components/molecules/IngredientList';
-import InstructionsList from '@/components/molecules/InstructionsList';
-import ReviewSection from '@/components/molecules/ReviewSection';
-import Loading from '@/components/ui/Loading';
-import Error from '@/components/ui/Error';
-import { recipeService } from '@/services/api/recipeService';
-import { savedRecipeService } from '@/services/api/savedRecipeService';
-import { groceryService } from '@/services/api/groceryService';
-import { reviewService } from '@/services/api/reviewService';
-import { formatTime } from '@/utils/helpers';
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { motion } from "framer-motion";
+import { toast } from "react-toastify";
+import { formatTime } from "@/utils/helpers";
+import ApperIcon from "@/components/ApperIcon";
+import Badge from "@/components/atoms/Badge";
+import Rating from "@/components/atoms/Rating";
+import Button from "@/components/atoms/Button";
+import RecipeCard from "@/components/molecules/RecipeCard";
+import ReviewSection from "@/components/molecules/ReviewSection";
+import IngredientList from "@/components/molecules/IngredientList";
+import InstructionsList from "@/components/molecules/InstructionsList";
+import Error from "@/components/ui/Error";
+import Loading from "@/components/ui/Loading";
+import { recipeService } from "@/services/api/recipeService";
+import { groceryService } from "@/services/api/groceryService";
+import { savedRecipeService } from "@/services/api/savedRecipeService";
+import { reviewService } from "@/services/api/reviewService";
 
 const RecipeDetail = () => {
   const { id } = useParams();
@@ -150,11 +151,11 @@ const RecipeDetail = () => {
       </Button>
       
       {/* Hero Section */}
-      <div className="relative overflow-hidden rounded-xl">
+<div className="relative overflow-hidden rounded-xl">
         <img
           src={recipe.imageUrl}
           alt={recipe.title}
-          className="w-full h-80 object-cover"
+          className="w-full h-96 object-cover"
         />
         <div className="absolute inset-0 bg-gradient-overlay"></div>
         <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -234,8 +235,8 @@ const RecipeDetail = () => {
                 className="flex-1"
               >
                 {isSaved ? "Saved" : "Save Recipe"}
-              </Button>
-<Button
+</Button>
+              <Button
                 variant="outline"
                 icon="Share"
                 onClick={async () => {

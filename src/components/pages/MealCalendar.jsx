@@ -56,7 +56,7 @@ const MealCalendar = () => {
     if (!draggedRecipe) return;
 
     try {
-      const newMealPlan = {
+const newMealPlan = {
         recipeId: draggedRecipe.Id,
         date: date.toISOString().split('T')[0],
         timeSlot,
@@ -84,7 +84,7 @@ const MealCalendar = () => {
     }
   };
 
-  const getMealsForDate = (date) => {
+const getMealsForDate = (date) => {
     const dateStr = date.toISOString().split('T')[0];
     return mealPlans.filter(meal => meal.date === dateStr);
   };
@@ -254,7 +254,7 @@ const MealCalendar = () => {
                     
                     {/* Meal Slots */}
                     <div className="space-y-1">
-                      {timeSlots.map(slot => {
+{timeSlots.map(slot => {
                         const slotMeals = dayMeals.filter(meal => meal.timeSlot === slot);
                         return (
                           <div
@@ -312,9 +312,8 @@ const MealCalendar = () => {
               </div>
               
               {(() => {
-                const recipe = getRecipeById(selectedMeal.recipeId);
+const recipe = getRecipeById(selectedMeal.recipeId);
                 if (!recipe) return <div>Recipe not found</div>;
-                
                 return (
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
@@ -324,7 +323,7 @@ const MealCalendar = () => {
                         className="w-16 h-16 rounded-lg object-cover"
                       />
                       <div>
-                        <h4 className="font-medium text-gray-900">{recipe.title}</h4>
+<h4 className="font-medium text-gray-900">{recipe.title}</h4>
                         <p className="text-sm text-gray-600 capitalize">{selectedMeal.timeSlot}</p>
                         <p className="text-sm text-gray-600">{selectedMeal.date}</p>
                       </div>

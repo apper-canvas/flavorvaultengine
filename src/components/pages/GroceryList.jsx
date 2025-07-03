@@ -84,7 +84,7 @@ const GroceryList = () => {
   const progressPercentage = totalCount > 0 ? (completedCount / totalCount) * 100 : 0;
   
   // Group items by category (using first letter as simple grouping)
-  const groupedItems = groceryItems.reduce((groups, item) => {
+const groupedItems = groceryItems.reduce((groups, item) => {
     const key = item.ingredient.charAt(0).toUpperCase();
     if (!groups[key]) {
       groups[key] = [];

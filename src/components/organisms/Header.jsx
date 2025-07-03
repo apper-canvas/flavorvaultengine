@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useSelector } from 'react-redux';
 import ApperIcon from '@/components/ApperIcon';
 import Button from '@/components/atoms/Button';
+import { AuthContext } from '../../App';
 
 const Header = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
+  const { logout } = useContext(AuthContext);
+  const { user, isAuthenticated } = useSelector((state) => state.user);
 const navItems = [
     { name: 'Browse Recipes', path: '/browse', icon: 'Search' },
     { name: 'My Recipes', path: '/my-recipes', icon: 'BookOpen' },
@@ -53,7 +56,25 @@ const navItems = [
                 {item.name}
               </Link>
             ))}
-          </nav>
+</nav>
+          
+          {/* User Actions */}
+          <div className="hidden md:flex items-center gap-2">
+            {isAuthenticated && user && (
+              <span className="text-white text-sm mr-2">
+                Hello, {user.firstName || user.name || 'User'}!
+              </span>
+            )}
+            <Button
+              variant="outline"
+              size="small"
+              onClick={logout}
+              icon="LogOut"
+              className="text-white border-white hover:bg-white hover:text-primary"
+            >
+              Logout
+            </Button>
+          </div>
           
           {/* Mobile menu button */}
           <button
@@ -88,7 +109,26 @@ const navItems = [
                 <ApperIcon name={item.icon} className="w-4 h-4" />
                 {item.name}
               </Link>
-            ))}
+))}
+            <div className="px-4 py-2 border-t border-gray-200 mt-2">
+              {isAuthenticated && user && (
+                <div className="text-gray-600 text-sm mb-2">
+                  Hello, {user.firstName || user.name || 'User'}!
+                </div>
+              )}
+              <Button
+                variant="outline"
+                size="small"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  logout();
+                }}
+                icon="LogOut"
+                className="w-full"
+              >
+                Logout
+              </Button>
+            </div>
           </nav>
         </motion.div>
       )}
