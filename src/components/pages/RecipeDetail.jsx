@@ -235,12 +235,45 @@ const RecipeDetail = () => {
               >
                 {isSaved ? "Saved" : "Save Recipe"}
               </Button>
-              <Button
+<Button
                 variant="outline"
                 icon="Share"
-                onClick={() => {
-                  navigator.clipboard.writeText(window.location.href);
-                  toast.success('Recipe link copied to clipboard!');
+                onClick={async () => {
+                  try {
+                    const url = window.location.href;
+                    
+                    // Try modern Clipboard API first
+                    if (navigator.clipboard && window.isSecureContext) {
+                      await navigator.clipboard.writeText(url);
+                      toast.success('Recipe link copied to clipboard!');
+                    } else {
+                      // Fallback for older browsers or non-secure contexts
+                      const textArea = document.createElement('textarea');
+                      textArea.value = url;
+                      textArea.style.position = 'fixed';
+                      textArea.style.left = '-999999px';
+                      textArea.style.top = '-999999px';
+                      document.body.appendChild(textArea);
+                      textArea.focus();
+                      textArea.select();
+                      
+                      try {
+                        const successful = document.execCommand('copy');
+                        if (successful) {
+                          toast.success('Recipe link copied to clipboard!');
+                        } else {
+                          throw new Error('Copy command failed');
+                        }
+                      } catch (err) {
+                        toast.error('Unable to copy link. Please copy the URL manually.');
+                      } finally {
+                        document.body.removeChild(textArea);
+                      }
+                    }
+                  } catch (err) {
+                    console.error('Clipboard operation failed:', err);
+                    toast.error('Unable to copy link. Please copy the URL manually.');
+                  }
                 }}
                 className="flex-1"
               >
