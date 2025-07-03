@@ -16,8 +16,7 @@ import Loading from "@/components/ui/Loading";
 import { recipeService } from "@/services/api/recipeService";
 import { groceryService } from "@/services/api/groceryService";
 import { savedRecipeService } from "@/services/api/savedRecipeService";
-import { reviewService } from "@/services/api/reviewService";
-
+import reviewService from "@/services/api/reviewService";
 const RecipeDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
