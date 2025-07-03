@@ -239,15 +239,24 @@ const RecipeDetail = () => {
                 variant="outline"
                 icon="Share"
                 onClick={async () => {
-                  try {
-                    const url = window.location.href;
-                    
-                    // Try modern Clipboard API first
-                    if (navigator.clipboard && window.isSecureContext) {
+                  const url = window.location.href;
+                  let copySuccess = false;
+                  
+                  // Try modern Clipboard API first if available and secure
+                  if (navigator.clipboard && window.isSecureContext) {
+                    try {
                       await navigator.clipboard.writeText(url);
+                      copySuccess = true;
                       toast.success('Recipe link copied to clipboard!');
-                    } else {
-                      // Fallback for older browsers or non-secure contexts
+                    } catch (err) {
+                      // Clipboard API failed (permissions, etc.), fall back to legacy method
+                      console.warn('Clipboard API failed, trying fallback:', err);
+                    }
+                  }
+                  
+                  // Fallback method if modern API failed or unavailable
+                  if (!copySuccess) {
+                    try {
                       const textArea = document.createElement('textarea');
                       textArea.value = url;
                       textArea.style.position = 'fixed';
@@ -257,22 +266,18 @@ const RecipeDetail = () => {
                       textArea.focus();
                       textArea.select();
                       
-                      try {
-                        const successful = document.execCommand('copy');
-                        if (successful) {
-                          toast.success('Recipe link copied to clipboard!');
-                        } else {
-                          throw new Error('Copy command failed');
-                        }
-                      } catch (err) {
-                        toast.error('Unable to copy link. Please copy the URL manually.');
-                      } finally {
-                        document.body.removeChild(textArea);
+                      const successful = document.execCommand('copy');
+                      document.body.removeChild(textArea);
+                      
+                      if (successful) {
+                        toast.success('Recipe link copied to clipboard!');
+                      } else {
+                        throw new Error('Legacy copy command failed');
                       }
+                    } catch (err) {
+                      console.error('All clipboard methods failed:', err);
+                      toast.error('Unable to copy link. Please copy the URL manually.');
                     }
-                  } catch (err) {
-                    console.error('Clipboard operation failed:', err);
-                    toast.error('Unable to copy link. Please copy the URL manually.');
                   }
                 }}
                 className="flex-1"
