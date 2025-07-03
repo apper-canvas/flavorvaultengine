@@ -106,7 +106,7 @@ const RecipeCard = ({ recipe, onSave, onAddToGroceryList, isSaved = false }) => 
             ))}
           </div>
           
-          <div className="flex gap-2">
+<div className="flex gap-2">
             <Button
               variant="ghost"
               size="small"
@@ -126,6 +126,16 @@ const RecipeCard = ({ recipe, onSave, onAddToGroceryList, isSaved = false }) => 
               Add to List
             </Button>
           </div>
+          
+          {/* Folder selector for saved recipes */}
+          {isSaved && (
+            <div className="mt-3 pt-3 border-t border-gray-100">
+              <div className="flex items-center gap-2 text-sm text-gray-500">
+                <ApperIcon name="Folder" className="w-4 h-4" />
+                <span>Move to folder</span>
+              </div>
+            </div>
+          )}
         </div>
       </Link>
     </motion.div>

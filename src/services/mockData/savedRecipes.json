@@ -2,6 +2,7 @@
   {
     "Id": 1,
     "recipeId": 1,
+    "folderId": null,
     "title": "Mediterranean Quinoa Bowl",
     "imageUrl": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop",
     "savedAt": "2024-01-18T14:30:00Z"
@@ -9,6 +10,7 @@
   {
     "Id": 2,
     "recipeId": 3,
+    "folderId": null,
     "title": "Avocado Toast with Poached Egg",
     "imageUrl": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=400&h=300&fit=crop",
     "savedAt": "2024-01-28T08:45:00Z"
@@ -16,6 +18,7 @@
   {
     "Id": 3,
     "recipeId": 6,
+    "folderId": null,
     "title": "Blueberry Pancakes",
     "imageUrl": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=400&h=300&fit=crop",
     "savedAt": "2024-02-12T10:20:00Z"
